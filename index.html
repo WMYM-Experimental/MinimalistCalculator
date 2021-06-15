@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mcalc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&display=swap" rel="stylesheet">
+    <script src="Calculator.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="Screen.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="calc-screen">
+                <div id="previous-value"></div>
+                <div id="actual-value"></div>
+            </div>
+            <button class="double-column">AC</button>
+            <button id="del">DEL</button>
+            <button class="operator">/</button>
+
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">x</button>
+
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">+</button>
+
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">-</button>
+
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <button class="operator double-column" id="result-button">=</button>
+        </div>
+    </div>
+</body>
+
+</html>
