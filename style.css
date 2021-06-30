@@ -4,12 +4,8 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #ffd60a;
-  padding: 1rem;
+  margin: 0;
+  background-color: #ffc300;
 }
 
 button {
