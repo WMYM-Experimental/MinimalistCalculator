@@ -4,8 +4,12 @@
 }
 
 body {
-  margin:40px 40px 40px 40px;
-  background-color: #ffc300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffd60a;
+  padding: 1rem;
 }
 
 button {
