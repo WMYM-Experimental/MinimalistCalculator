@@ -1,17 +1,57 @@
 class Screen {
   constructor(calcScreenPreviousValue, calcScreenActualValue) {
     this.calcScreenPreviousValue = calcScreenPreviousValue; //what we want to modify
-    this.calcScreenActualValue = calcScreenActualValue; //what we want to modify
-    this.calculator = new Calculator();
-    this.actualValue = ""; //what we save (the value)
-    this.previousValue = ""; //what we save (the value) first have to be a string
+    this.calcScreenPreviousValue = calcScreenPreviousValue; //what we want to modify
+    this.calc = new Calculator();
+    this.operationTy = undefined;
+    this.actualValue = "";
+    this.previousValue = "";
+    this.sign = {
+      add: "+",
+      divide: "%",
+      multiply: "x",
+      substract: "-",
+    };
   }
-  addNumber(number) {
-    this.actualValue = number;
-    this.printValue();
+
+  delete() {
+    this.actualValue = this.actualValue.toString().slice(0, -1);
+    this.printValues();
   }
-  printValue() {
-    this.calcScreenActualValue.textContent = this.actualValue;
-    this.calcScreenPreviusValue.textContent = this.previousValue;
+
+  deleteAll() {
+    this.actualValue = "";
+    this.previousValue = "";
+    this.operationTy = undefined;
+    this.printValues();
+  }
+
+  compute(type) {
+    this.operationTy !== "equal" && this.calculate();
+    this.operationTy = type;
+    this.previousValue = this.actualValue || this.previousValue;
+    this.actualValue = "";
+    this.printValues();
+  }
+
+  addNumber(numero) {
+    if (numero === "." && this.actualValue.includes(".")) return;
+    this.actualValue = this.actualValue.toString() + numero.toString();
+    this.printValues();
+  }
+
+  printValues() {
+    this.displayactualValue.textContent = this.actualValue;
+    this.displaypreviousValue.textContent = `${this.previousValue} ${
+      this.sign[this.operationTy] || ""
+    }`;
+  }
+
+  calculate() {
+    const previousValue = parseFloat(this.previousValue);
+    const actualValue = parseFloat(this.actualValue);
+
+    if (isNaN(actualValue) || isNaN(previousValue)) return;
+    this.actualValue = this.calc[this.operationTy](previousValue, actualValue);
   }
 }
