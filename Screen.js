@@ -34,9 +34,9 @@ class Screen {
     this.printValues();
   }
 
-  addNumber(numero) {
-    if (numero === "." && this.actualValue.includes(".")) return;
-    this.actualValue = this.actualValue.toString() + numero.toString();
+  addNumber(num) {
+    if (num === "." && this.actualValue.includes(".")) return;
+    this.actualValue = this.actualValue.toString() + num.toString();
     this.printValues();
   }
 
