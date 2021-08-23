@@ -1,0 +1,71 @@
+* {
+  color: #ffd60a;
+  font-family: "Odibee Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #ffc300;
+}
+
+button {
+  cursor: pointer;
+  margin: 5px;
+  padding: 0;
+  border-radius: 20px 5px 5px 5px;
+  font-size: 2em;
+  border: none;
+  background-color: #003566;
+  box-shadow: 5px 5px 10px -3px #003566;
+}
+
+button:active {
+  background-color: #001d3d;
+}
+button:focus {
+  outline: none;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 160px repeat(5, 75px);
+  background-color: #fdfcdc;
+  padding: 15px;
+  border-radius: 32px 32px 25px 25px;
+  box-shadow: 12px 10px 0 5px #003566;
+}
+.calc-screen {
+  padding: 16px;
+  display: flex;
+  margin: 10px 10px 25px;
+  grid-column: 1/ -1;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #000814;
+  border-radius: 5px;
+  text-align: right;
+  justify-content: space-between;
+  word-break: break-all;
+  box-shadow: 8px 8px 2px -3px #0008;
+}
+.double-column {
+  grid-column: span 2;
+}
+#actual-value {
+  font-size: 1.5em;
+}
+#previous-value {
+  font-size: 3em;
+}
+#del:active {
+  color: #f07167;
+}
+#result-button:active {
+  color: #f07167;
+}
